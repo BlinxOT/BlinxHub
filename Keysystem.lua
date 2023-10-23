@@ -4086,7 +4086,8 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-_G.Key = "EE2B6215C23946138DD76EE6C71C3","BLINX"
+_G.Key = "BLINX"
+_G.Key = "EE2B6215C23946138DD76EE6C71C3"
 _G.KeyInput = "string"
 
 function MakeScriptHub()
