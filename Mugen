@@ -24,6 +24,12 @@ local client = game:GetService("Players").LocalPlayer
 local Plr = game:GetService("Players").LocalPlayer
 local Data = game:GetService("ReplicatedStorage")["Player_Data"][game.Players.LocalPlayer.Name]
 
+local function pressKey(key)
+    VIM:SendKeyEvent(true, key, false, game)
+    wait()
+    VIM:SendKeyEvent(false, key, false, game)
+end
+
 
 local function GetHuman()
     local h = LP.Character
@@ -111,7 +117,7 @@ end
 -- // AUTO CLASH - FARM
 	
 spawn(function()
-    while task.wait() do
+    while task.wait(0.5) do
         pcall(function()
             if AutoClash then
                 pressKey(Enum.KeyCode[game.Players.LocalPlayer.PlayerGui["universal_client_scripts"].Clashing2["Clash_Ui2"].Holder:WaitForChild('Front').Text])
