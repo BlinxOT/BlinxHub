@@ -546,11 +546,11 @@ end)
 ------ LIBRARY
 local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
-local ThemeManager = loadstring(game:HttpGet('https://pastebin.com/raw/uDuDj3Y7'))()
+local ThemeManager = loadstring(game:HttpGet('https://raw.githubusercontent.com/NovazUwU/SharkHub/main/Theme'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
 local Window = Library:CreateWindow({
-    Title = 'Fuck Israel | Premium | Ouwigahara ',
+    Title = 'Blinx Hub | Ouwigahara | Premium',
     Center = true,
     AutoShow = true,
 })
@@ -1020,7 +1020,7 @@ local clanLabel = RightGroupBox:AddLabel("Clan: N/A")
 RightGroupBox:AddDropdown('SelectClan', {
     Values = { 'Kamado', 'Uzui', 'Rengoku', 'Agatsuma', 'Tomioka', 'Tokito', 'Hashibira', 'Soyama', 'Shinazugawa', 'Kocho', 'Sabito', 'Tamayo', 'Kuwajima', 'Makamo' },
     Default = 1, -- number index of the value / string
-    Multi = false, -- true / false, allows multiple choices to be selected
+    Multi = true, -- true / false, allows multiple choices to be selected
     Text = 'Select Clan',
     Callback = function(v)
         local localplayer = game:GetService("Players").LocalPlayer
@@ -2330,28 +2330,6 @@ spawn(function()
                 return flower
             end
 
-            oldasdqw = coroutine.wrap(function()
-                while TP do
-                    task.wait()
-                    ImprovedTeleport(getFlower().WorldPivot.Position)
-                    task.wait(getgenv().delay)
-                    for i, v in next, getFlower():GetDescendants() do
-                        if v:IsA("ProximityPrompt") then
-                            local try = 0
-                            repeat
-                                wait(0.01)
-                                try += 1
-                                fireproximityprompt(v, 1, true)
-                                if not getFlower() or not TP then
-                                    oldasdqw()
-                                    break
-                                end
-                            until try == 10
-                            getFlower():Destroy()
-                        end
-                    end
-                end
-            end)
 
             oldasdqw()
         else
