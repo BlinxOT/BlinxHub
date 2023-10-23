@@ -117,7 +117,7 @@ end
 -- // AUTO CLASH - FARM
 	
 spawn(function()
-    while task.wait(0.5) do
+    while task.wait(0.2) do
         pcall(function()
             if AutoClash then
                 pressKey(Enum.KeyCode[game.Players.LocalPlayer.PlayerGui["universal_client_scripts"].Clashing2["Clash_Ui2"].Holder:WaitForChild('Front').Text])
