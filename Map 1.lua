@@ -1,4 +1,4 @@
---------- SERVICES //TEST WORKS [OUWIGAHARA]
+--------- SERVICES //TEST WORKS [MAP 1]
 
 --- ANTI AFK?
 repeat wait() until game:IsLoaded()
@@ -25,7 +25,7 @@ local Plr = game:GetService("Players").LocalPlayer
 local Data = game:GetService("ReplicatedStorage")["Player_Data"][game.Players.LocalPlayer.Name]
 local Tool = game:GetService("ReplicatedStorage").Tools:GetChildren()
 local WebhookURL = "" 
-game:GetService("Players").LocalPlayer.DisplayName = "SharkHub"
+game:GetService("Players").LocalPlayer.DisplayName = "FuckBlinx"
 
 local function GetHuman()
     local h = LP.Character
@@ -224,37 +224,37 @@ local bosCFTable = {
 local function attack(method)
 
     wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
-    wait()
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
+wait()
+game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
 
 end
 
@@ -302,7 +302,7 @@ spawn(function()
 
 spawn(function()
    game:GetService("RunService").Stepped:Connect(function()
-       if getgenv().AllBosses or TPtoLocation or TPtoTrainer or getgenv().GotoMuzan or FarmBoss then
+       if getgenv().AllBosses or TPtoLocation or TPtoTrainer or getgenv().TPtoMuzan or FarmBoss then
            for _, v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
                if v:IsA("BasePart") then
                    v.CanCollide = false    
@@ -352,12 +352,12 @@ task.spawn(function()
 end)
 
 local function GetNearestBoss()
-        
+
    local Bosses = game:GetService("Workspace").Mobs:GetDescendants()
    local BossesTable = {}
 
    for i,v in pairs(Bosses) do
-       if v:IsA("Model") and v:FindFirstChild("Humanoid") then
+       if table.find(BossessTable, v.Name) and v:IsA("Model") and v:FindFirstChild("Humanoid") then
            if v.Humanoid.Health > 0 then
                table.insert(BossesTable, v)
            end
@@ -379,46 +379,46 @@ local function GetNearestBoss()
 end
 
 -- // AUTO ALL BOSSES - FARM
-	
+
 spawn(function()
    while task.wait() do
-      pcall(function()
-         if getgenv().AllBosses then
+       pcall(function()
+           if getgenv().AllBosses then
 
-            if not LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
-               antifall3 = Instance.new("BodyVelocity", LP.Character.HumanoidRootPart)
-               antifall3.Velocity = Vector3.new(0, 0, 0)
-               antifall3.MaxForce = Vector3.new(9e9, 9e9, 9e9)
-            elseif LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
-               local v = GetNearestBoss()
-               
-                     if v then
-                        repeat task.wait()                                      
-                           if GetDistance(v:GetModelCFrame() * FarmModes) < 25 and GetDistance(v:GetModelCFrame() * FarmModes) < 150 then
-                              if TweenFa then
-                              TweenFa:Cancel()
-                              wait(.1)
-                              end
-                              LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame() * FarmModes
-                           else
-                              TweenFa = Tween(v:GetModelCFrame() * FarmModes)
-                           end
-                           if v.Humanoid.Health > 0 and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and GetDistance(v:GetModelCFrame() * FarmModes) < 10 then
-                              NearestMobs = true
-                           elseif v.Humanoid.Health <= 0 or not v:FindFirstChild("Humanoid") and GetDistance(v:GetModelCFrame() * FarmModes) > 10 then
-                              NearestMobs = false
-                           end
-                        until not getgenv().AllBosses or not v.Parent or v.Humanoid.Health <= 0 or not v:IsDescendantOf(workspace)
-                        NearestMobs = false
+               if not LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
+                   antifall3 = Instance.new("BodyVelocity", LP.Character.HumanoidRootPart)
+                   antifall3.Velocity = Vector3.new(0, 0, 0)
+                   antifall3.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+               elseif LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
+                   local v = GetNearestBoss()
+
+                               repeat task.wait()                                      
+                                   if GetDistance(v:GetModelCFrame() * FarmModes) < 25 and GetDistance(v:GetModelCFrame() * FarmModes) < 150 then
+                                       if TweenFa then
+                                       TweenFa:Cancel()
+                                       wait(.1)
+                                       end
+                                       LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame() * FarmModes
+                                   else
+                                       TweenFa = Tween(v:GetModelCFrame() * FarmModes)
+                                   end
+                                   if v.Humanoid.Health > 0 and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and GetDistance(v:GetModelCFrame() * FarmModes) < 10 then
+                                       NearestMobs = true
+                                   elseif v.Humanoid.Health <= 0 or not v:FindFirstChild("Humanoid") and GetDistance(v:GetModelCFrame() * FarmModes) > 10 then
+                                       NearestMobs = false
+                                   end
+                               until not getgenv().AllBosses or not v.Parent or v.Humanoid.Health <= 0 or not v:IsDescendantOf(workspace)
+                               NearestMobs = false
+                       
+                   
                end
-            end
-         else
-            antifall3:Destroy()
-         end
-         if getgenv().AllBosses == false then
-            TweenFa:Cancel()
-         end
-      end)
+           else
+               antifall3:Destroy()
+           end
+           if getgenv().AllBosses == false then
+               TweenFa:Cancel()
+           end
+       end)
    end
 end)
 
@@ -527,6 +527,7 @@ spawn(function()
 end)
 
 
+
 -- // AUTO EAT SOULS - FARM
 
 spawn(function()
@@ -550,7 +551,7 @@ local ThemeManager = loadstring(game:HttpGet('https://raw.githubusercontent.com/
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
 local Window = Library:CreateWindow({
-    Title = 'Blinx Hub | Ouwigahara | Premium',
+    Title = 'BlinxHub || MAP 1',
     Center = true,
     AutoShow = true,
 })
@@ -560,13 +561,10 @@ local Tabs = {
    Main = Window:AddTab('Project Slayers'),
    Misc = Window:AddTab('Misc'),
    Teleports = Window:AddTab('Teleports'),
-   Ouwi = Window:AddTab('Ouwigahara'),
    ['Settings'] = Window:AddTab('Settings'),
 
 }
 
-local Ouwi = Tabs.Ouwi:AddLeftGroupbox('           [Auto Collect Orbs]')
-local Ouwi2 = Tabs.Ouwi:AddRightGroupbox('              [Destroy Orbs]')
 local Test = Tabs.Misc:AddLeftGroupbox('              [Misc]')
 local LeftGroupBox = Tabs.Main:AddLeftGroupbox('           [Auto Farms]')
 local RightGroupBox = Tabs.Main:AddRightGroupbox('            [Status]')
@@ -577,14 +575,16 @@ local RightGroupBox3 = Tabs.Main:AddRightGroupbox('           [Auto Skills]')
 local RightGroupBox4 = Tabs.Main:AddRightGroupbox('            [Other]')
 local Test2 = Tabs.Misc:AddLeftGroupbox('            [Training]')
 local Test3 = Tabs.Misc:AddLeftGroupbox('             [Modes]')
-local Test4 = Tabs.Misc:AddRightGroupbox('        [Working God Modes(DEMON)')
+local Test4 = Tabs.Main:AddRightGroupbox('        [Working God Modes(DEMON)')
 local Test5 = Tabs.Misc:AddRightGroupbox('  [God Modes (SLAYER/HUMAN)]')
 local Shark1 = Tabs.Teleports:AddLeftGroupbox('            [TELEPORTS]')
 local Sharky1 = Tabs.Teleports:AddRightGroupbox('            [SERVERS]')
 local Shark2 = Tabs.Misc:AddRightGroupbox('       [Auto Collect Lily]')
 local Shark3 = Tabs.Misc:AddRightGroupbox('       [Some Stuffs]')
 
-
+LeftGroupBox:AddButton("Made By Blinx", function()
+    setclipboard("Fuck You") 
+end)
 
 getgenv().Method = "Sword"
 LeftGroupBox:AddDropdown('KillAura', {
@@ -613,9 +613,9 @@ LeftGroupBox:AddDropdown('KillAura', {
  getgenv().TweenSpeed = 100
  LeftGroupBox:AddSlider('MySlider', {
     Text = 'Tween Speed',
-    Default = 100,
+    Default = 1000,
     Min = 10,
-    Max = 500,
+    Max = 1000,
     Rounding = 10,
     Compact = false,
     Callback = function(self)
@@ -626,9 +626,9 @@ LeftGroupBox:AddDropdown('KillAura', {
 getgenv().Distance = 5
 LeftGroupBox:AddSlider('MySlider2', {
     Text = 'Farm Distance',
-    Default = 5,
+    Default = 20,
     Min = 1,
-    Max = 15,
+    Max = 20,
     Rounding = 1,
     Compact = false,
     Callback = function(self)
@@ -657,7 +657,7 @@ LeftGroupBox:AddToggle('RemovePARTICLES', {
 })
 
 LeftGroupBox2:AddToggle('FarmBosses', {
-    Text = 'Farm Ouwigahara',
+    Text = 'Farm Bosses [MAP 1]',
     Default = false, -- Default value (true / false)
     Tooltip = 'Kill Aura', -- Information shown when you hover over the toggle
     Callback = function(value)
@@ -733,6 +733,43 @@ LeftGroupBox2:AddToggle('BypassGKA', {
 
 local running = false -- Variable to track the state
 
+LeftGroupBox2:AddToggle('GKAarroWW', {
+    Text = 'Global Kill Aura (ARROW) [FAST CAN KICK]',
+    Default = false,
+    Tooltip = 'Global Kill Aura (ARROW)',
+    Callback = function(state)
+        running = state -- Update the running state
+
+        if running then -- Start the loop only if running is true
+            while running do -- Loop while running is true
+                local success, error = pcall(function()
+                    for i, v in next, workspace.Mobs:GetDescendants() do
+                        if v:IsA("Model") and v:FindFirstChild("HumanoidRootPart") then
+                            local Handle_Initiate_S_ = game.ReplicatedStorage.Remotes.To_Server.Handle_Initiate_S_
+                            Handle_Initiate_S_:InvokeServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, v.HumanoidRootPart.CFrame, v, 500, 500)
+                            Handle_Initiate_S_:InvokeServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, v.HumanoidRootPart.CFrame, v, 500, 500)
+                            Handle_Initiate_S_:InvokeServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, v.HumanoidRootPart.CFrame, v, 500, 500)
+                            Handle_Initiate_S_:InvokeServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, v.HumanoidRootPart.CFrame, v, 500, 500)
+                            Handle_Initiate_S_:InvokeServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, v.HumanoidRootPart.CFrame, v, 500, 500)
+                            Handle_Initiate_S_:InvokeServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, v.HumanoidRootPart.CFrame, v, 500, 500)
+                            Handle_Initiate_S_:InvokeServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, v.HumanoidRootPart.CFrame, v, 500, 500)
+                        end
+                    end
+                end)
+
+                if not success then
+                    print("An error occurred:", error)
+                end
+
+                -- Add a delay between iterations to prevent excessive server load
+                wait() -- Adjust the delay time as desired
+            end
+        end
+    end
+})
+
+local running = false -- Variable to track the state
+
 LeftGroupBox2:AddToggle('GKAareroWeeW', {
     Text = 'Global Kill Aura (SAFEST)',
     Default = false,
@@ -792,55 +829,11 @@ LeftGroupBox2:AddToggle('GKAareroWeeW', {
 })
 
 
-LeftGroupBox2:AddToggle('BypassTGKA', {
-    Text = 'Bypass THUNDER KA [USE THIS FIRST]',
-    Default = false,
-    Tooltip = 'Bypass GKA',
-    Callback = function(state)
-        firing = state -- Update the firing state
-        if firing then -- Start the loop only if firing is true
-            while firing do -- Loop while firing is true
-                local args = {
-                    [1] = "skil_ting_asd",
-                    [2] = game:GetService("Players").LocalPlayer,
-                    [3] = "Thunderbreathingrapidslashes",
-                    [4] = 5
-                }
-                
-                game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(unpack(args))                 
-                wait(14)
-            end
-        end
-    end
-})
-
-local TKA = false
-
-LeftGroupBox2:AddToggle('TKA', {
-    Text = 'Thunder Kill Aura',
-    Default = false,
-    Callback = function(state)
-        TKA = state
-        while TKA do
-            local args = {
-                [1] = "ricespiritdamage",
-                [2] = game:GetService("Players").LocalPlayer.Character,
-                [3] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame,
-                [4] = 300
-            }
-
-            game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S_:InvokeServer(unpack(args))
-            wait(0.85)
-        end
-    end
-})
-
-
 LeftGroupBox:AddSlider('KASlider', {
     Text = 'Kill Aura',
-    Default = 1.25,
+    Default = 0.25,
     Min = 0.25,
-    Max = 5,
+    Max = 3,
     Rounding = 1,
     Compact = false,
     Callback = function(self)
@@ -865,7 +858,6 @@ LeftGroupBox2:AddToggle('AutoCollectChestv2', {
      getgenv().AutoCollectChestv2 = value
    end
 })
-
 
 
 spawn(function()
@@ -899,6 +891,7 @@ LeftGroupBox2:AddToggle('AutoBlock', {
         end
     end
 })
+
 
 LeftGroupBox2:AddToggle('AutoEatSouls', {
    Text = 'Auto Eat Souls [Demon]',
@@ -1012,7 +1005,6 @@ task.spawn(function()
    end
 end)
 
-
 local playerName = game.Players.LocalPlayer.Name
 local RightGroupBox = RightGroupBox
 
@@ -1110,8 +1102,6 @@ RightGroupBox:AddButton("SPIN DEMON ART", function()
    
    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S_"):InvokeServer(unpack(args))    
 end)
-
-
 
 
 RightGroupBox2:AddInput('MyTextbox', {
@@ -1369,7 +1359,6 @@ RightGroupBox4:AddSlider('JumpPowerS', {
     end
 })
 
-
 Test:AddToggle('InfStamina', {
    Text = 'Infinite Stamina',
    Default = false, -- Default value (true / false)
@@ -1573,11 +1562,10 @@ spawn(function()
    end
   end)
 
-
 Test3:AddToggle('UniGodMode', {
    Text = 'Universal God Mode',
    Default = false, -- Default value (true / false)
-Tooltip = '[Must Have All Sword and Scythe Equipped in Inventory and All Have Mastery 35+]',
+  Tooltip = '[Must Have All Sword and Scythe Equipped in Inventory and All Have Mastery 35+]',
    Callback = function(state)
       if state then
          _G.godmode2 = true
@@ -1609,7 +1597,7 @@ Tooltip = '[Must Have All Sword and Scythe Equipped in Inventory and All Have Ma
    end    
 })
 
- Test3:AddToggle('SemiGodMode', {
+  Test3:AddToggle('SemiGodMode', {
    Text = 'Semi God Mode [Kamado]',
    Default = false, -- Default value (true / false)
    Tooltip = 'Infinite Heals With Kamado Regeneration', -- Information shown when you hover over the toggle
@@ -1621,6 +1609,7 @@ Tooltip = '[Must Have All Sword and Scythe Equipped in Inventory and All Have Ma
        end
    end
 })
+
 
 Test3:AddToggle('SemiGodMode2', {
    Text = 'Semi God Mode [ALL RACES]',
@@ -1838,18 +1827,19 @@ Test4:AddToggle('SwampGM', {
 
 
 Test4:AddToggle('IceGM', {
-    Text = 'God Mode [ICE MUST HAVE ALL MOVES]',
-    Default = false, -- Default value (true / false)
-    Callback = function(state)
-       if state then
-          _G.ICEgodmode = true
-    while _G.ICEgodmode do
-    local args = {
-       [1] = "skil_ting_asd",
-       [2] = game:GetService("Players").LocalPlayer,
-       [3] = "ice_demon_art_bodhisatva",
-       [4] = 1
-    }
+   Text = 'God Mode [ICE MUST HAVE ALL MOVES]',
+   Default = false, -- Default value (true / false)
+   Callback = function(state)
+      if state then
+         _G.ICEgodmode = true
+   while _G.ICEgodmode do
+   local args = {
+      [1] = "skil_ting_asd",
+      [2] = game:GetService("Players").LocalPlayer,
+      [3] = "ice_demon_art_bodhisatva",
+      [4] = 1
+   }
+   
    
    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
    wait(0.1)
@@ -1933,12 +1923,11 @@ Test5:AddToggle('SoundGM', {
          }
          
          game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-         wait(0.1)
+         wait(1)
          end
       end
    end    
 })
-
 Test5:AddToggle('FlameGM', {
    Text = 'God Mode [Flame 32+]',
    Default = false, -- Default value (true / false)
@@ -2176,6 +2165,162 @@ Shark1:AddButton("Reset To Void", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(755, -498, 892)
 end)
 
+
+local isAutoBuyEnabled = false
+local autoBuyLoop
+
+local function buyBandage()
+    local args = {
+        [1] = "buysomething",
+        [2] = game:GetService("Players").LocalPlayer,
+        [3] = "Bandage",
+        [4] = game:GetService("ReplicatedStorage").Player_Data[game:GetService("Players").LocalPlayer.Name].Yen,
+        [5] = game:GetService("ReplicatedStorage").Player_Data[game:GetService("Players").LocalPlayer.Name].Inventory,
+        [6] = 10
+    }
+    
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(unpack(args))
+end
+
+Shark3:AddToggle('AutoBuy', {
+    Text = 'Auto Buy Bandage',
+    Default = false,
+    Tooltip = 'Auto Buy',
+    Callback = function(state)
+        isAutoBuyEnabled = state
+        
+        if isAutoBuyEnabled then
+            autoBuyLoop = spawn(function()
+                while isAutoBuyEnabled do
+                    buyBandage()
+                    wait(0.1)
+                end
+            end)
+        else
+            if autoBuyLoop then
+                autoBuyLoop:Destroy()
+                autoBuyLoop = nil
+            end
+        end
+    end
+})
+
+
+local player = game:GetService("Players").LocalPlayer
+local itemName = ""
+
+Shark3:AddInput('ItemName', {
+    Default = 'Put FULL Item Name',
+    Numeric = false,
+    Finished = false,
+    Text = 'Put FULL Item Name',
+    Placeholder = 'Put FULL Item Name',
+    Callback = function(value)
+        itemName = value
+    end
+})
+Shark3:AddButton("Sell 100 Items With That Name", function()
+    if itemName == "" then
+        print("Please input an item name.")
+        return
+    end
+    local inventory = game:GetService("ReplicatedStorage").Player_Data[player.Name].Inventory.Items
+    local itemFound = false
+    for _, item in ipairs(inventory:GetDescendants()) do
+        if item.Name == itemName then
+
+            itemFound = true
+            print("Item Found:", item.Name)
+
+            local settings = item.Settings
+            local id = settings.Id.Value
+            print("ID:", id)
+            local args = {
+                [1] = {
+                    [id] = 100
+                },
+                [2] = 0,
+                [3] = 0
+            }
+            game:GetService("ReplicatedStorage").Sell_Items_tang:InvokeServer(unpack(args))
+            
+            break 
+        end
+    end
+    if not itemFound then
+        print("Item not found:", itemName)
+    end
+end)
+
+Shark3:AddButton("Sell 50 Items With That Name", function()
+    if itemName == "" then
+        print("Please input an item name.")
+        return
+    end
+    local inventory = game:GetService("ReplicatedStorage").Player_Data[player.Name].Inventory.Items
+    local itemFound = false
+    for _, item in ipairs(inventory:GetDescendants()) do
+        if item.Name == itemName then
+
+            itemFound = true
+            print("Item Found:", item.Name)
+
+            local settings = item.Settings
+            local id = settings.Id.Value
+            print("ID:", id)
+            local args = {
+                [1] = {
+                    [id] = 50
+                },
+                [2] = 0,
+                [3] = 0
+            }
+            game:GetService("ReplicatedStorage").Sell_Items_tang:InvokeServer(unpack(args))
+            
+            break 
+        end
+    end
+    if not itemFound then
+        print("Item not found:", itemName)
+    end
+end)
+
+Shark3:AddButton("Sell 10 Items With That Name", function()
+    if itemName == "" then
+        print("Please input an item name.")
+        return
+    end
+    local inventory = game:GetService("ReplicatedStorage").Player_Data[player.Name].Inventory.Items
+    local itemFound = false
+    for _, item in ipairs(inventory:GetDescendants()) do
+        if item.Name == itemName then
+
+            itemFound = true
+            print("Item Found:", item.Name)
+
+            local settings = item.Settings
+            local id = settings.Id.Value
+            print("ID:", id)
+            local args = {
+                [1] = {
+                    [id] = 10
+                },
+                [2] = 0,
+                [3] = 0
+            }
+            game:GetService("ReplicatedStorage").Sell_Items_tang:InvokeServer(unpack(args))
+            
+            break 
+        end
+    end
+    if not itemFound then
+        print("Item not found:", itemName)
+    end
+end)
+
+
+Shark3:AddDivider()
+
  -- // LOCATIONS - TELEPORTS
 
 spawn(function()
@@ -2330,6 +2475,28 @@ spawn(function()
                 return flower
             end
 
+            oldasdqw = coroutine.wrap(function()
+                while TP do
+                    task.wait()
+                    ImprovedTeleport(getFlower().WorldPivot.Position)
+                    task.wait(getgenv().delay)
+                    for i, v in next, getFlower():GetDescendants() do
+                        if v:IsA("ProximityPrompt") then
+                            local try = 0
+                            repeat
+                                wait(0.01)
+                                try += 1
+                                fireproximityprompt(v, 1, true)
+                                if not getFlower() or not TP then
+                                    oldasdqw()
+                                    break
+                                end
+                            until try == 10
+                            getFlower():Destroy()
+                        end
+                    end
+                end
+            end)
 
             oldasdqw()
         else
@@ -2340,161 +2507,6 @@ spawn(function()
         end
       end    
    })
-
-local isAutoBuyEnabled = false
-local autoBuyLoop
-
-local function buyBandage()
-    local args = {
-        [1] = "buysomething",
-        [2] = game:GetService("Players").LocalPlayer,
-        [3] = "Bandage",
-        [4] = game:GetService("ReplicatedStorage").Player_Data[game:GetService("Players").LocalPlayer.Name].Yen,
-        [5] = game:GetService("ReplicatedStorage").Player_Data[game:GetService("Players").LocalPlayer.Name].Inventory,
-        [6] = 10
-    }
-    
-    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(unpack(args))
-end
-
-Shark3:AddToggle('AutoBuy', {
-    Text = 'Auto Buy Bandage',
-    Default = false,
-    Tooltip = 'Auto Buy',
-    Callback = function(state)
-        isAutoBuyEnabled = state
-        
-        if isAutoBuyEnabled then
-            autoBuyLoop = spawn(function()
-                while isAutoBuyEnabled do
-                    buyBandage()
-                    wait(0.1)
-                end
-            end)
-        else
-            if autoBuyLoop then
-                autoBuyLoop:Destroy()
-                autoBuyLoop = nil
-            end
-        end
-    end
-})
-
-
-local player = game:GetService("Players").LocalPlayer
-local itemName = ""
-
-Shark3:AddInput('ItemName', {
-    Default = 'Put FULL Item Name',
-    Numeric = false,
-    Finished = false,
-    Text = 'Put FULL Item Name',
-    Placeholder = 'Put FULL Item Name',
-    Callback = function(value)
-        itemName = value
-    end
-})
-Shark3:AddButton("Sell 100 Items With That Name", function()
-    if itemName == "" then
-        print("Please input an item name.")
-        return
-    end
-    local inventory = game:GetService("ReplicatedStorage").Player_Data[player.Name].Inventory.Items
-    local itemFound = false
-    for _, item in ipairs(inventory:GetDescendants()) do
-        if item.Name == itemName then
-
-            itemFound = true
-            print("Item Found:", item.Name)
-
-            local settings = item.Settings
-            local id = settings.Id.Value
-            print("ID:", id)
-            local args = {
-                [1] = {
-                    [id] = 100
-                },
-                [2] = 0,
-                [3] = 0
-            }
-            game:GetService("ReplicatedStorage").Sell_Items_tang:InvokeServer(unpack(args))
-            
-            break 
-        end
-    end
-    if not itemFound then
-        print("Item not found:", itemName)
-    end
-end)
-
-Shark3:AddButton("Sell 50 Items With That Name", function()
-    if itemName == "" then
-        print("Please input an item name.")
-        return
-    end
-    local inventory = game:GetService("ReplicatedStorage").Player_Data[player.Name].Inventory.Items
-    local itemFound = false
-    for _, item in ipairs(inventory:GetDescendants()) do
-        if item.Name == itemName then
-
-            itemFound = true
-            print("Item Found:", item.Name)
-
-            local settings = item.Settings
-            local id = settings.Id.Value
-            print("ID:", id)
-            local args = {
-                [1] = {
-                    [id] = 50
-                },
-                [2] = 0,
-                [3] = 0
-            }
-            game:GetService("ReplicatedStorage").Sell_Items_tang:InvokeServer(unpack(args))
-            
-            break 
-        end
-    end
-    if not itemFound then
-        print("Item not found:", itemName)
-    end
-end)
-
-Shark3:AddButton("Sell 10 Items With That Name", function()
-    if itemName == "" then
-        print("Please input an item name.")
-        return
-    end
-    local inventory = game:GetService("ReplicatedStorage").Player_Data[player.Name].Inventory.Items
-    local itemFound = false
-    for _, item in ipairs(inventory:GetDescendants()) do
-        if item.Name == itemName then
-
-            itemFound = true
-            print("Item Found:", item.Name)
-
-            local settings = item.Settings
-            local id = settings.Id.Value
-            print("ID:", id)
-            local args = {
-                [1] = {
-                    [id] = 10
-                },
-                [2] = 0,
-                [3] = 0
-            }
-            game:GetService("ReplicatedStorage").Sell_Items_tang:InvokeServer(unpack(args))
-            
-            break 
-        end
-    end
-    if not itemFound then
-        print("Item not found:", itemName)
-    end
-end)
-
-Shark3:AddDivider()
-
 
    Shark3:AddInput('DisplayName', {
       Default = 'Change Display Name',
@@ -2617,296 +2629,6 @@ end)
 Sharky1:AddButton("Teleport To Trading", function()
    game:GetService('TeleportService'):Teleport(13489082242)
 end)
-
--- // AUTO COLLECT ORB - FARM
-	
-spawn(function()
-	while task.wait() do
-		if StaminaRegen then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "StaminaRegen" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if HealthRegen then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "HealthRegen" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if BloodMoney then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "BloodMoney" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if DoublePoints then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "DoublePoints" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if InstaKill then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "InstaKill" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if WisteriaPoisoning then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "WisteriaPoisoning" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if MobCamouflage then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "MobCamouflage" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-Ouwi:AddToggle('GetOrb1', {
-   Text = 'Auto [Health Regen] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().HealthRegen = value
-   end
-})
-
-Ouwi:AddToggle('GetOrb2', {
-   Text = 'Auto [Stamina Regen] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().StaminaRegen = value
-   end
-})
-
-Ouwi:AddToggle('GetOrb3', {
-   Text = 'Auto [Blood Money] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().BloodMoney = value
-   end
-})
-
-Ouwi:AddToggle('GetOrb4', {
-   Text = 'Auto [Double Points] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().DoublePoints = value
-   end
-})
-
-Ouwi:AddToggle('GetOrb5', {
-   Text = 'Auto [Instant Kill] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().InstaKill = value
-   end
-})
-
-Ouwi:AddToggle('GetOrb6', {
-   Text = 'Auto [Wisteria Poisoning] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().WisteriaPoisoning = value
-   end
-})
-
-Ouwi:AddToggle('GetOrb6', {
-   Text = 'Auto [Mob Camouflage] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().MobCamouflage = value
-   end
-})
-
-
-
-local DestroyMobCamouflage = false
-Ouwi2:AddToggle('DestroyOrb', {
-   Text = 'Destroy [Mob Camouflage] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyMobCamouflage = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyMobCamouflage and game:GetService("Workspace").Map:FindFirstChild("MobCamouflage") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "MobCamouflage" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-local DestroyHealthRegen = false
-Ouwi2:AddToggle('DestroyOrb2', {
-   Text = 'Destroy [Health Regen] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyHealthRegen = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyHealthRegen and game:GetService("Workspace").Map:FindFirstChild("HealthRegen") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "HealthRegen" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyStaminaRegen = false
-Ouwi2:AddToggle('DestroyOrb3', {
-   Text = 'Destroy [Stamina Regen] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyStaminaRegen = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyStaminaRegen and game:GetService("Workspace").Map:FindFirstChild("StaminaRegen") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "StaminaRegen" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyBloodMoney = false
-Ouwi2:AddToggle('DestroyOrb4', {
-   Text = 'Destroy [Blood Money] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyBloodMoney = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyBloodMoney and game:GetService("Workspace").Map:FindFirstChild("BloodMoney") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "BloodMoney" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyDoublePoints = false
-Ouwi2:AddToggle('DestroyOrb5', {
-   Text = 'Destroy [Double Points] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyDoublePoints = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyDoublePoints and game:GetService("Workspace").Map:FindFirstChild("DoublePoints") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "DoublePoints" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyInstaKill = false
-Ouwi2:AddToggle('DestroyOrb6', {
-   Text = 'Destroy [Insta Kill] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyInstaKill = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyInstaKill and game:GetService("Workspace").Map:FindFirstChild("InstaKill") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "InstaKill" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyWisteriaPoisoning = false
-Ouwi2:AddToggle('DestroyOrb7', {
-   Text = 'Destroy [Wisteria Poisoning] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyWisteriaPoisoning = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyWisteriaPoisoning and game:GetService("Workspace").Map:FindFirstChild("WisteriaPoisoning") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "WisteriaPoisoning" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
 
 
 Library:OnUnload(function()

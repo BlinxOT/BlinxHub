@@ -1,4 +1,4 @@
---------- SERVICES //TEST WORKS [OUWIGAHARA]
+---- SERVICES // TEST [MUGEN]
 
 --- ANTI AFK?
 repeat wait() until game:IsLoaded()
@@ -8,10 +8,10 @@ end)
 
 local UIS = game:GetService("UserInputService")
 local VirtualUser = game:GetService("VirtualUser")
-local VIM = game:GetService("VirtualInputManager")
+local VIM =game:GetService("VirtualInputManager")
 local ReplStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
-local Input = game:GetService("UserInputService")
+local Imput = game:GetService("UserInputService")
 local COREGUI = game:GetService("CoreGui")
 local LP = game:GetService("Players").LocalPlayer
 local HttpService = game:GetService("HttpService")
@@ -23,9 +23,13 @@ local request = (syn and syn.request) or (http and http.request) or http_request
 local client = game:GetService("Players").LocalPlayer
 local Plr = game:GetService("Players").LocalPlayer
 local Data = game:GetService("ReplicatedStorage")["Player_Data"][game.Players.LocalPlayer.Name]
-local Tool = game:GetService("ReplicatedStorage").Tools:GetChildren()
-local WebhookURL = "" 
-game:GetService("Players").LocalPlayer.DisplayName = "SharkHub"
+
+local function pressKey(key)
+    VIM:SendKeyEvent(true, key, false, game)
+    wait()
+    VIM:SendKeyEvent(false, key, false, game)
+end
+
 
 local function GetHuman()
     local h = LP.Character
@@ -41,6 +45,38 @@ function CreateTweenFloat()
     BV.Name = GramxProjectFloat
     BV.MaxForce = Vector3.new(100000, 100000, 100000)
     BV.Velocity = TweenFloatVelocity
+end
+
+
+local function GetDistance(Endpoint)
+    if typeof(Endpoint) == "Instance" then
+    Endpoint = Vector3.new(Endpoint.Position.X, game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y, Endpoint.Position.Z)
+    elseif typeof(Endpoint) == "CFrame" then
+    Endpoint = Vector3.new(Endpoint.Position.X, game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y, Endpoint.Position.Z)
+    end
+    local Magnitude = (Endpoint - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+    return Magnitude
+end
+
+
+function Tween(Endpoint)
+    if typeof(Endpoint) == "Instance" then
+    Endpoint = Endpoint.CFrame
+    end
+    local TweenFunc = {}
+    local Distance = GetDistance(Endpoint)
+    local TweenInfo = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Distance/getgenv().TweenSpeed, Enum.EasingStyle.Linear), {CFrame = Endpoint * CFrame.fromAxisAngle(Vector3.new(1,0,0), math.rad(0))})
+    TweenInfo:Play()
+    function TweenFunc:Cancel()
+    TweenInfo:Cancel()
+    return false
+    end
+    if Distance <= 100 then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Endpoint
+    TweenInfo:Cancel()
+    return false
+    end
+    return TweenFunc
 end
 
 
@@ -78,37 +114,18 @@ function RemovePARTICLES()
    end
 end
 
+-- // AUTO CLASH - FARM
+	
+spawn(function()
+    while task.wait(0.5) do
+        pcall(function()
+            if AutoClash then
+                pressKey(Enum.KeyCode[game.Players.LocalPlayer.PlayerGui["universal_client_scripts"].Clashing2["Clash_Ui2"].Holder:WaitForChild('Front').Text])
+            end
+        end)
+    end
+end)
 
-local function GetDistance(Endpoint)
-    if typeof(Endpoint) == "Instance" then
-    Endpoint = Vector3.new(Endpoint.Position.X, game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y, Endpoint.Position.Z)
-    elseif typeof(Endpoint) == "CFrame" then
-    Endpoint = Vector3.new(Endpoint.Position.X, game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y, Endpoint.Position.Z)
-    end
-    local Magnitude = (Endpoint - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-    return Magnitude
-end
-
-
-function Tween(Endpoint)
-    if typeof(Endpoint) == "Instance" then
-    Endpoint = Endpoint.CFrame
-    end
-    local TweenFunc = {}
-    local Distance = GetDistance(Endpoint)
-    local TweenInfo = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Distance/getgenv().TweenSpeed, Enum.EasingStyle.Linear), {CFrame = Endpoint * CFrame.fromAxisAngle(Vector3.new(1,0,0), math.rad(0))})
-    TweenInfo:Play()
-    function TweenFunc:Cancel()
-    TweenInfo:Cancel()
-    return false
-    end
-    if Distance <= 100 then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Endpoint
-    TweenInfo:Cancel()
-    return false
-    end
-    return TweenFunc
-end
 function Hop()
     local PlaceID = game.PlaceId
     local AllIDs = {}
@@ -526,7 +543,6 @@ spawn(function()
    end
 end)
 
-
 -- // AUTO EAT SOULS - FARM
 
 spawn(function()
@@ -546,11 +562,11 @@ end)
 ------ LIBRARY
 local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
-local ThemeManager = loadstring(game:HttpGet('https://raw.githubusercontent.com/NovazUwU/SharkHub/main/Theme'))()
+local ThemeManager = loadstring(game:HttpGet('https://pastebin.com/raw/uDuDj3Y7'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
 local Window = Library:CreateWindow({
-    Title = 'Blinx Hub | Ouwigahara | Premium',
+    Title = 'Fuck Israel |Premium| Mugen',
     Center = true,
     AutoShow = true,
 })
@@ -560,13 +576,12 @@ local Tabs = {
    Main = Window:AddTab('Project Slayers'),
    Misc = Window:AddTab('Misc'),
    Teleports = Window:AddTab('Teleports'),
-   Ouwi = Window:AddTab('Ouwigahara'),
+   Mugen = Window:AddTab('Mugen'),
    ['Settings'] = Window:AddTab('Settings'),
 
 }
 
-local Ouwi = Tabs.Ouwi:AddLeftGroupbox('           [Auto Collect Orbs]')
-local Ouwi2 = Tabs.Ouwi:AddRightGroupbox('              [Destroy Orbs]')
+local Mugen = Tabs.Mugen:AddLeftGroupbox('        [Mugen]')
 local Test = Tabs.Misc:AddLeftGroupbox('              [Misc]')
 local LeftGroupBox = Tabs.Main:AddLeftGroupbox('           [Auto Farms]')
 local RightGroupBox = Tabs.Main:AddRightGroupbox('            [Status]')
@@ -583,7 +598,6 @@ local Shark1 = Tabs.Teleports:AddLeftGroupbox('            [TELEPORTS]')
 local Sharky1 = Tabs.Teleports:AddRightGroupbox('            [SERVERS]')
 local Shark2 = Tabs.Misc:AddRightGroupbox('       [Auto Collect Lily]')
 local Shark3 = Tabs.Misc:AddRightGroupbox('       [Some Stuffs]')
-
 
 
 getgenv().Method = "Sword"
@@ -628,7 +642,7 @@ LeftGroupBox:AddSlider('MySlider2', {
     Text = 'Farm Distance',
     Default = 5,
     Min = 1,
-    Max = 15,
+    Max = 10,
     Rounding = 1,
     Compact = false,
     Callback = function(self)
@@ -657,7 +671,7 @@ LeftGroupBox:AddToggle('RemovePARTICLES', {
 })
 
 LeftGroupBox2:AddToggle('FarmBosses', {
-    Text = 'Farm Ouwigahara',
+    Text = 'Farm Mugen',
     Default = false, -- Default value (true / false)
     Tooltip = 'Kill Aura', -- Information shown when you hover over the toggle
     Callback = function(value)
@@ -711,6 +725,7 @@ LeftGroupBox2:AddToggle('KillAura', {
    end
 })
 
+
 local firing = false -- Variable to track the state
 
 LeftGroupBox2:AddToggle('BypassGKA', {
@@ -730,11 +745,10 @@ LeftGroupBox2:AddToggle('BypassGKA', {
     end
 })
 
-
 local running = false -- Variable to track the state
 
 LeftGroupBox2:AddToggle('GKAareroWeeW', {
-    Text = 'Global Kill Aura (SAFEST)',
+    Text = 'Global Kill Aura (HELL MODE)',
     Default = false,
     Tooltip = 'Global Kill Aura (SAFEST)',
     Callback = function(state)
@@ -834,7 +848,6 @@ LeftGroupBox2:AddToggle('TKA', {
         end
     end
 })
-
 
 LeftGroupBox:AddSlider('KASlider', {
     Text = 'Kill Aura',
@@ -1110,8 +1123,6 @@ RightGroupBox:AddButton("SPIN DEMON ART", function()
    
    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S_"):InvokeServer(unpack(args))    
 end)
-
-
 
 
 RightGroupBox2:AddInput('MyTextbox', {
@@ -1573,7 +1584,6 @@ spawn(function()
    end
   end)
 
-
 Test3:AddToggle('UniGodMode', {
    Text = 'Universal God Mode',
    Default = false, -- Default value (true / false)
@@ -1609,7 +1619,7 @@ Tooltip = '[Must Have All Sword and Scythe Equipped in Inventory and All Have Ma
    end    
 })
 
- Test3:AddToggle('SemiGodMode', {
+  Test3:AddToggle('SemiGodMode', {
    Text = 'Semi God Mode [Kamado]',
    Default = false, -- Default value (true / false)
    Tooltip = 'Infinite Heals With Kamado Regeneration', -- Information shown when you hover over the toggle
@@ -1933,7 +1943,7 @@ Test5:AddToggle('SoundGM', {
          }
          
          game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-         wait(0.1)
+         wait(1)
          end
       end
    end    
@@ -2235,23 +2245,7 @@ spawn(function()
     end)
 
 
-   Shark2:AddToggle('AutoCollectLily', {
-      Text = 'Auto Collect Lily',
-      Default = false, 
-      Callback = function(value)
-         TP = value
-        if TP then
-            getgenv().speed = 270
-            getgenv().AutoRejoin = true -- Automatically rejoins when you're kicked
-            getgenv().delay = 1
 
-            game.Players.PlayerRemoving:Connect(function(player)
-                if player.Name == game.Players.LocalPlayer.Name and getgenv().AutoRejoin then
-                    local ts = game:GetService("TeleportService")
-                    ts:Teleport(game.PlaceId)
-                    autoload()
-                end
-            end)
 
             local RunService = game:GetService("RunService")
             local Players = game:GetService("Players")
@@ -2261,85 +2255,6 @@ spawn(function()
 
             local TeleportSpeed = getgenv().speed or 250
             local NextFrame = RunService.Heartbeat
-
-            local function fireproximityprompt(ProximityPrompt, Amount, Skip)
-                assert(ProximityPrompt, "Argument #1 Missing or nil")
-                assert(
-                    typeof(ProximityPrompt) == "Instance" and ProximityPrompt:IsA("ProximityPrompt"),
-                    "Attempted to fire a Value that is not a ProximityPrompt"
-                )
-                local HoldDuration = ProximityPrompt.HoldDuration
-                if Skip then
-                    ProximityPrompt.HoldDuration = 0
-                end
-                for i = 1, Amount or 1 do
-                    ProximityPrompt:InputHoldBegin()
-                    if Skip then
-                        local RunService = game:GetService("RunService")
-                        local Start = tick()
-                        repeat
-                            RunService.Heartbeat:Wait(0.1)
-                        until tick() - Start > HoldDuration
-                    end
-                    ProximityPrompt:InputHoldEnd()
-                end
-                ProximityPrompt.HoldDuration = HoldDuration
-            end
-
-            local function ImprovedTeleport(Target)
-                if typeof(Target) == "Instance" and Target:IsA("BasePart") then
-                    Target = Target.Position
-                end
-                if typeof(Target) == "CFrame" then
-                    Target = Target.p
-                end
-                local HRP = Player.Character and Player.Character:FindFirstChild("HumanoidRootPart")
-                if not HRP then
-                    return
-                end
-                local StartingPosition = HRP.Position
-                local PositionDelta = Target - StartingPosition -- Calculating the difference between the start and end positions.
-                local StartTime = tick()
-                local TotalDuration = (StartingPosition - Target).magnitude / TeleportSpeed
-                repeat
-                    NextFrame:Wait()
-                    local Delta = tick() - StartTime
-                    local Progress = math.min(Delta / TotalDuration, 1) -- Getting the percentage of completion of the teleport (between 0-1, not 0-100)
-                    -- We also use math.min to maximize it at 1 in case the player gets an FPS drop, so it doesn't go past the target.
-                    local MappedPosition = StartingPosition + (PositionDelta * Progress)
-                    HRP.Velocity = Vector3.new() -- Resetting the effect of gravity so it doesn't get too much and drag the player below the ground.
-                    HRP.CFrame = CFrame.new(MappedPosition)
-                until (HRP.Position - Target).magnitude <= TeleportSpeed / 2
-                HRP.Anchored = false
-                HRP.CFrame = CFrame.new(Target)
-            end
-
-            local flowers = game:GetService("Workspace").Demon_Flowers_Spawn
-
-            local function getFlower()
-                local dist, flower = math.huge
-                for i, v in next, flowers:GetChildren() do
-                    if v:IsA("Model") then
-                        local mag = (root.Position - v.WorldPivot.Position).magnitude
-                        if mag < dist then
-                            dist = mag
-                            flower = v
-                        end
-                    end
-                end
-                return flower
-            end
-
-
-            oldasdqw()
-        else
-            TP = false
-            if oldasdqw then
-                oldasdqw()
-            end
-        end
-      end    
-   })
 
 local isAutoBuyEnabled = false
 local autoBuyLoop
@@ -2493,6 +2408,7 @@ Shark3:AddButton("Sell 10 Items With That Name", function()
     end
 end)
 
+
 Shark3:AddDivider()
 
 
@@ -2618,296 +2534,49 @@ Sharky1:AddButton("Teleport To Trading", function()
    game:GetService('TeleportService'):Teleport(13489082242)
 end)
 
--- // AUTO COLLECT ORB - FARM
-	
-spawn(function()
-	while task.wait() do
-		if StaminaRegen then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "StaminaRegen" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if HealthRegen then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "HealthRegen" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if BloodMoney then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "BloodMoney" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if DoublePoints then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "DoublePoints" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if InstaKill then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "InstaKill" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if WisteriaPoisoning then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "WisteriaPoisoning" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if MobCamouflage then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "MobCamouflage" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-Ouwi:AddToggle('GetOrb1', {
-   Text = 'Auto [Health Regen] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().HealthRegen = value
+Mugen:AddToggle('Clash', {
+   Text = 'Auto Clash [NOT INSTANT]',
+   Default = false, -- Default value (true / false)
+   Callback = function(state)
+       getgenv().AutoClash = state
    end
 })
 
-Ouwi:AddToggle('GetOrb2', {
-   Text = 'Auto [Stamina Regen] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().StaminaRegen = value
-   end
-})
+Mugen:AddButton("INSTANT Auto Clash (Use in 7 secs)", function()
+    local playerName = game:GetService("Players").LocalPlayer.Name
 
-Ouwi:AddToggle('GetOrb3', {
-   Text = 'Auto [Blood Money] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().BloodMoney = value
-   end
-})
+    local args = {
+        [1] = "Change_Value",
+        [2] = workspace.Debree.clash_folder[playerName.."vsEnmu"][playerName],
+        [3] = 200,  -- Change the value of index 3 to 200
+    }
 
-Ouwi:AddToggle('GetOrb4', {
-   Text = 'Auto [Double Points] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().DoublePoints = value
-   end
-})
+    game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(unpack(args))
+end) -- Add the closing parentheses here
 
-Ouwi:AddToggle('GetOrb5', {
-   Text = 'Auto [Instant Kill] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().InstaKill = value
-   end
-})
+ Mugen:AddButton("GLOBAL INSTANT Clash (Use in 7 secs)", function()
+    local players = game:GetService("Players"):GetPlayers()
 
-Ouwi:AddToggle('GetOrb6', {
-   Text = 'Auto [Wisteria Poisoning] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().WisteriaPoisoning = value
-   end
-})
+    for _, player in ipairs(players) do
+        local playerName = player.Name
 
-Ouwi:AddToggle('GetOrb6', {
-   Text = 'Auto [Mob Camouflage] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().MobCamouflage = value
-   end
-})
+        local clashFolder = workspace.Debree.clash_folder
+        local playerFolder = clashFolder:FindFirstChild(playerName.."vsEnmu")
 
+        if playerFolder then
+            local targetPlayer = playerFolder:FindFirstChild(playerName)
+            if targetPlayer then
+                local args = {
+                    [1] = "Change_Value",
+                    [2] = targetPlayer,
+                    [3] = 200,  -- Change the value of index 3 to 200
+                }
 
-
-local DestroyMobCamouflage = false
-Ouwi2:AddToggle('DestroyOrb', {
-   Text = 'Destroy [Mob Camouflage] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyMobCamouflage = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyMobCamouflage and game:GetService("Workspace").Map:FindFirstChild("MobCamouflage") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "MobCamouflage" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-local DestroyHealthRegen = false
-Ouwi2:AddToggle('DestroyOrb2', {
-   Text = 'Destroy [Health Regen] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyHealthRegen = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyHealthRegen and game:GetService("Workspace").Map:FindFirstChild("HealthRegen") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "HealthRegen" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyStaminaRegen = false
-Ouwi2:AddToggle('DestroyOrb3', {
-   Text = 'Destroy [Stamina Regen] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyStaminaRegen = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyStaminaRegen and game:GetService("Workspace").Map:FindFirstChild("StaminaRegen") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "StaminaRegen" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyBloodMoney = false
-Ouwi2:AddToggle('DestroyOrb4', {
-   Text = 'Destroy [Blood Money] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyBloodMoney = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyBloodMoney and game:GetService("Workspace").Map:FindFirstChild("BloodMoney") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "BloodMoney" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyDoublePoints = false
-Ouwi2:AddToggle('DestroyOrb5', {
-   Text = 'Destroy [Double Points] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyDoublePoints = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyDoublePoints and game:GetService("Workspace").Map:FindFirstChild("DoublePoints") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "DoublePoints" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyInstaKill = false
-Ouwi2:AddToggle('DestroyOrb6', {
-   Text = 'Destroy [Insta Kill] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyInstaKill = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyInstaKill and game:GetService("Workspace").Map:FindFirstChild("InstaKill") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "InstaKill" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyWisteriaPoisoning = false
-Ouwi2:AddToggle('DestroyOrb7', {
-   Text = 'Destroy [Wisteria Poisoning] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyWisteriaPoisoning = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyWisteriaPoisoning and game:GetService("Workspace").Map:FindFirstChild("WisteriaPoisoning") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "WisteriaPoisoning" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
+                game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(unpack(args))
+            end
+        end
+    end
+end) -- Add the closing parentheses here
 
 Library:OnUnload(function()
    print('Unloaded!')

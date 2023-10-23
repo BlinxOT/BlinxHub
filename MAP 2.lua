@@ -1,4 +1,4 @@
---------- SERVICES //TEST WORKS [OUWIGAHARA]
+--------- SERVICES //TEST WORKS [MAP 2]
 
 --- ANTI AFK?
 repeat wait() until game:IsLoaded()
@@ -25,24 +25,23 @@ local Plr = game:GetService("Players").LocalPlayer
 local Data = game:GetService("ReplicatedStorage")["Player_Data"][game.Players.LocalPlayer.Name]
 local Tool = game:GetService("ReplicatedStorage").Tools:GetChildren()
 local WebhookURL = "" 
-game:GetService("Players").LocalPlayer.DisplayName = "SharkHub"
+game:GetService("Players").LocalPlayer.DisplayName = "Fuck Israel"
 
 local function GetHuman()
-    local h = LP.Character
-    h = h and (h:FindFirstChild("Humanoid") or h:FindFirstChildWhichIsA("Humanoid"))
-    return h or workspace.CurrentCamera.CameraSubject
+   local h = LP.Character
+   h = h and (h:FindFirstChild("Humanoid") or h:FindFirstChildWhichIsA("Humanoid"))
+   return h or workspace.CurrentCamera.CameraSubject
 end
 
 local GramxProjectFloat = tostring(math.random(0, 100000))
 local TweenFloatVelocity = Vector3.new(0,0,0)
 function CreateTweenFloat()
-    local BV = game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild(GramxProjectFloat) or Instance.new("BodyVelocity")
-    BV.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
-    BV.Name = GramxProjectFloat
-    BV.MaxForce = Vector3.new(100000, 100000, 100000)
-    BV.Velocity = TweenFloatVelocity
+   local BV = game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild(GramxProjectFloat) or Instance.new("BodyVelocity")
+   BV.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+   BV.Name = GramxProjectFloat
+   BV.MaxForce = Vector3.new(100000, 100000, 100000)
+   BV.Velocity = TweenFloatVelocity
 end
-
 
 function RemoveDMG()
    local part  =  game:GetService("StarterPlayer").StarterPlayerScripts.Client_Modules.Modules.Extra.Damage_Text
@@ -64,6 +63,8 @@ function RemoveDMG()
    end
 end
 
+
+
 function RemovePARTICLES()
    local COINS = game:GetService("ReplicatedStorage").Assets.Extras.Coin
 
@@ -80,150 +81,153 @@ end
 
 
 local function GetDistance(Endpoint)
-    if typeof(Endpoint) == "Instance" then
-    Endpoint = Vector3.new(Endpoint.Position.X, game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y, Endpoint.Position.Z)
-    elseif typeof(Endpoint) == "CFrame" then
-    Endpoint = Vector3.new(Endpoint.Position.X, game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y, Endpoint.Position.Z)
-    end
-    local Magnitude = (Endpoint - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-    return Magnitude
+   if typeof(Endpoint) == "Instance" then
+   Endpoint = Vector3.new(Endpoint.Position.X, game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y, Endpoint.Position.Z)
+   elseif typeof(Endpoint) == "CFrame" then
+   Endpoint = Vector3.new(Endpoint.Position.X, game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y, Endpoint.Position.Z)
+   end
+   local Magnitude = (Endpoint - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+   return Magnitude
 end
 
 
 function Tween(Endpoint)
-    if typeof(Endpoint) == "Instance" then
-    Endpoint = Endpoint.CFrame
-    end
-    local TweenFunc = {}
-    local Distance = GetDistance(Endpoint)
-    local TweenInfo = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Distance/getgenv().TweenSpeed, Enum.EasingStyle.Linear), {CFrame = Endpoint * CFrame.fromAxisAngle(Vector3.new(1,0,0), math.rad(0))})
-    TweenInfo:Play()
-    function TweenFunc:Cancel()
-    TweenInfo:Cancel()
-    return false
-    end
-    if Distance <= 100 then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Endpoint
-    TweenInfo:Cancel()
-    return false
-    end
-    return TweenFunc
+   if typeof(Endpoint) == "Instance" then
+   Endpoint = Endpoint.CFrame
+   end
+   local TweenFunc = {}
+   local Distance = GetDistance(Endpoint)
+   local TweenInfo = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Distance/getgenv().TweenSpeed, Enum.EasingStyle.Linear), {CFrame = Endpoint * CFrame.fromAxisAngle(Vector3.new(1,0,0), math.rad(0))})
+   TweenInfo:Play()
+   function TweenFunc:Cancel()
+   TweenInfo:Cancel()
+   return false
+   end
+   if Distance <= 100 then
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Endpoint
+   TweenInfo:Cancel()
+   return false
+   end
+   return TweenFunc
 end
+
 function Hop()
-    local PlaceID = game.PlaceId
-    local AllIDs = {}
-    local foundAnything = ""
-    local actualHour = os.date("!*t").hour
-    local Deleted = false
-    function TPReturner()
-        local Site;
-        if foundAnything == "" then
-            Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
-        else
-            Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
-        end
-        local ID = ""
-        if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
-            foundAnything = Site.nextPageCursor
-        end
-        local num = 0;
-        for i,v in pairs(Site.data) do
-            local Possible = true
-            ID = tostring(v.id)
-            if tonumber(v.maxPlayers) > tonumber(v.playing) then
-                for _,Existing in pairs(AllIDs) do
-                    if num ~= 0 then
-                        if ID == tostring(Existing) then
-                            Possible = false
+        local PlaceID = game.PlaceId
+        local AllIDs = {}
+        local foundAnything = ""
+        local actualHour = os.date("!*t").hour
+        local Deleted = false
+        function TPReturner()
+            local Site;
+            if foundAnything == "" then
+                Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+            else
+                Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+            end
+            local ID = ""
+            if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+                foundAnything = Site.nextPageCursor
+            end
+            local num = 0;
+            for i,v in pairs(Site.data) do
+                local Possible = true
+                ID = tostring(v.id)
+                if tonumber(v.maxPlayers) > tonumber(v.playing) then
+                    for _,Existing in pairs(AllIDs) do
+                        if num ~= 0 then
+                            if ID == tostring(Existing) then
+                                Possible = false
+                            end
+                        else
+                            if tonumber(actualHour) ~= tonumber(Existing) then
+                                local delFile = pcall(function()
+                                    AllIDs = {}
+                                    table.insert(AllIDs, actualHour)
+                                end)
+                            end
                         end
-                    else
-                        if tonumber(actualHour) ~= tonumber(Existing) then
-                            local delFile = pcall(function()
-                                AllIDs = {}
-                                table.insert(AllIDs, actualHour)
-                            end)
-                        end
+                        num = num + 1
                     end
-                    num = num + 1
-                end
-                if Possible == true then
-                    table.insert(AllIDs, ID)
-                    wait()
-                    pcall(function()
+                    if Possible == true then
+                        table.insert(AllIDs, ID)
                         wait()
-                        game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
-                    end)
-                    wait(4)
+                        pcall(function()
+                            wait()
+                            game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                        end)
+                        wait(4)
+                    end
                 end
             end
         end
-    end
-    function Teleport() 
-        while wait() do
-            pcall(function()
-                TPReturner()
-                if foundAnything ~= "" then
+        function Teleport() 
+            while wait() do
+                pcall(function()
                     TPReturner()
-                end
-            end)
+                    if foundAnything ~= "" then
+                        TPReturner()
+                    end
+                end)
+            end
         end
+        Teleport()
     end
-    Teleport()
-end
 
 local function SkillBind(bind)
-    pcall(function()
-        VIM:SendKeyEvent(true,bind,false,game)
-        task.wait()
-        VIM:SendKeyEvent(false,bind,false,game)
-        wait(.2)
-    end)
+   pcall(function()
+       VIM:SendKeyEvent(true,bind,false,game)
+       task.wait()
+       VIM:SendKeyEvent(false,bind,false,game)
+       wait(.2)
+   end)
 end
---------- SERVICES // TABLES	
+
+--------- SERVICES // TABLES
+
+local BossessTable = {"Rengoku","Inosuke","Renpeke","Muichiro Tokito","Enme","Swampy","Akeza","Douma","Tengen","Sound Trainee"}
+local bosCFTable = {
+    ["Rengoku"] = CFrame.new(3656, 673, -345),
+    ["Akeza"] = CFrame.new(2010, 556, -128),
+    ["Renpeke"] = CFrame.new(-1258, 601, -650),
+    ["Muichiro Tokito"] = CFrame.new(4513, 673, -544),
+    ["Enme"] = CFrame.new(1591, 484, -690),
+    ["Swampy"] = CFrame.new(-1377, 601, -202),
+    ["Douma"] = CFrame.new(-5, 513, -1689),
+    ["Tengen"] = CFrame.new(1464, 486, -3118),
+    ["Sound Trainee"] = CFrame.new(1897, 663, -2805),
+    ["Inosuke"] = CFrame.new(1585, 300, -389),
+}
 
 local TrainersCF = {
-    ["Water Trainer"] = CFrame.new(705.209229, 261.426819, -2409.51587, -0.566798735, -5.48522401e-08, -0.641887605, -7.38932258e-08, 1, 2.8182352e-09, 0.641887605, 4.95921633e-08, -0.566798735),
-    ["Insect Trainer"] = CFrame.new(2873.81177, 316.95871, -3917.9397, 0.40715313, 4.81208531e-08, 0.91335988, -8.85969982e-08, 1, -1.31911939e-08, -0.91335988, -7.55501048e-08, 0.40715313),
-    ["Thunder Trainer"] = CFrame.new(-322.369507, 426.857788, -2384.4021, 0.361198723, -4.49157973e-08, -0.932488859, 1.14233451e-07, 1, -3.91942434e-09, 0.932488859, -1.05105727e-07, 0.361198723),
-    ["Wind Trainer"] = CFrame.new(1792.31458, 334.338989, -3521.31104, 0.862527311, -5.19402583e-08, -0.506010473, 8.30083167e-08, 1, 3.88463874e-08, 0.506010473, -7.55091492e-08, 0.862527311)
+    ["Flame Trainer"] = CFrame.new(-330, 602, -545),
+    ["Mist Trainer"] = CFrame.new(4323, 677, -724),
+    ["Beast Trainer"] = CFrame.new(1621, 300, -415),
+    ["Sound Trainer"] = CFrame.new(1650, 694, -2638),
+    ["Snow Trainer"] = CFrame.new(402, 532, -2877),
 }
 
 local Locations = {
-    ["Zapiwara Mountain"] = CFrame.new(-365.617981, 425.857422, -2303.92285, -0.351566792, -6.70503529e-13, 0.93616277, 9.77098068e-13, 1, 1.08316502e-12, -0.93616277, 1.2955277e-12, -0.351566792),
-    ["Waroru Cave"] = CFrame.new(683.164062, 261.426819, -2401.41797, 0.137014925, -3.46316149e-08, 0.990568995, 6.38769482e-09, 1, 3.4077793e-08, -0.990568995, 1.65828595e-09, 0.137014925),
-    ["Slasher Demon"] = CFrame.new(-485.866608, 274.511871, -3314.98169, -0.79503566, -1.09233929e-08, -0.606562674, 1.19430055e-09, 1, -1.95740775e-08, 0.606562674, -1.62865081e-08, -0.79503566),
-    ["Ushumaru Village"] = CFrame.new(-90.0373688, 354.723511, -3170.00439, 0.817297578, -1.0121405e-08, 0.576215804, 3.12666586e-08, 1, -2.6782951e-08, -0.576215804, 3.99059843e-08, 0.817297578),
-    ["Ouwbayashi Home"] = CFrame.new(1593.49072, 315.983917, -4618.15088, -0.795035839, -1.09234e-08, -0.606562734, 1.19429622e-09, 1, -1.95740828e-08, 0.606562734, -1.62865081e-08, -0.795035839),
-    ["Kabiwaru Village"] = CFrame.new(2037.20203, 315.908813, -2956.77539, -0.795035839, -1.09234e-08, -0.606562734, 1.19429622e-09, 1, -1.95740828e-08, 0.606562734, -1.62865081e-08, -0.795035839),
-    ["Zapiwara Cave"] = CFrame.new(-8.2838707, 275.944641, -2414.72607, -0.795035779, -1.09233964e-08, -0.606562555, 1.19429289e-09, 1, -1.95740775e-08, 0.606562555, -1.62865046e-08, -0.795035779),
-    ["Dangerous Woods"] = CFrame.new(4061.43677, 342.289581, -3928.90332, -0.795035839, -1.09233973e-08, -0.606562614, 1.19429444e-09, 1, -1.95740775e-08, 0.606562614, -1.62865064e-08, -0.795035839),
-    ["Final Selection"] = CFrame.new(5200.76709, 365.949982, -2425.61646, -0.795035779, -1.09233964e-08, -0.606562555, 1.19429289e-09, 1, -1.95740775e-08, 0.606562555, -1.62865046e-08, -0.795035779),
-    ["Kiribating Village"] = CFrame.new(-40.3280869, 282.282745, -1623.75159, -0.795035839, -1.09233991e-08, -0.606562614, 1.19429266e-09, 1, -1.95740792e-08, 0.606562614, -1.62865046e-08, -0.795035839),
-    ["Butterfly Mansion"] = CFrame.new(3022.90869, 316.075623, -3928.17261, -0.795035779, -1.09233982e-08, -0.606562555, 1.19429144e-09, 1, -1.95740775e-08, 0.606562555, -1.62865046e-08, -0.795035779),
-    ["Abubu Cave"] = CFrame.new(1044.44873, 276.190704, -3483.0647, -0.795035839, -1.09233991e-08, -0.606562614, 1.19429266e-09, 1, -1.95740792e-08, 0.606562614, -1.62865046e-08, -0.795035839),
-    ["Testing Place"] = CFrame.new(-32, 3, 137)
+    ["Frozen Lake"] = CFrame.new(2703, 675, -701),
+    ["Nomay Village"] = CFrame.new(3562, 673, -2109),
+    ["Wop City"] = CFrame.new(-31, 601, -431),
+    ["Dungeon"] = CFrame.new(-146, 611, -498),
+    ["Demon Cave 1"] = CFrame.new(4222, 674, 582),
+    ["Tsune Village"] = CFrame.new(1214, 569, 77),
+    ["Akeza Cave"] = CFrame.new(1933, 556, -142),
+    ["Wop Training Grounds"] = CFrame.new(224, 597, 483),
+    ["Mugen Train Station"] = CFrame.new(733, 500, 1056),
+    ["Demon Cave 2"] = CFrame.new(1183, 487, -1192),
+    ["Frozen Lake Cave"] = CFrame.new(2753, 675, -699),
+	["Snowy Place"] = CFrame.new(379, 532, -2866),
+	["Sound Cave"] = CFrame.new(1829, 487, -2771),
+	["Devourers Jaw"] = CFrame.new(481, 508, -1864),
 }
-
-local BossessTable = {"Sabito", "Susamaru", "Zanegutsu Kuuchie", "Yahaba", "Bandit Kaden", "Bandit Zoku", "Shiron", "Nezuko", "Slasher", "Giyu", "Sanemi"}
-local bosCFTable = {
-    ["Susamaru"] = CFrame.new(1415.65686, 315.908813, -4571.56445, 0.546769679, 9.56999102e-08, -0.837283075, -3.89699188e-08, 1, 8.88496885e-08, 0.837283075, -1.59514606e-08, 0.546769679),
-    ["Sabito"] = CFrame.new(1257.60046, 275.351685, -2834.26611, -0.999906898, 0, 0.0136531433, 0, 1, 0, -0.0136531433, 0, -0.999906898),
-    ["Zanegutsu Kuuchie"] = CFrame.new(-336.3461, 425.857422, -2271.75513, -0.698250651, 1.51218398e-08, 0.715853333, -2.08847464e-08, 1, -4.1495408e-08, -0.715853333, -4.39246115e-08, -0.698250651),
-    ["Yahaba"] = CFrame.new(1415.65686, 315.908813, -4571.56445, 0.546769679, 9.56999102e-08, -0.837283075, -3.89699188e-08, 1, 8.88496885e-08, 0.837283075, -1.59514606e-08, 0.546769679),
-    ["Bandit Kaden"] = CFrame.new(-569.584351, 304.46698, -2827.55371, 0.480675608, -1.73434103e-08, 0.876898468, 1.14556499e-07, 1, -4.30165024e-08, -0.876898468, 1.21131407e-07, 0.480675608),
-    ["Shiron"] = CFrame.new(3203.10229, 370.884155, -3953.36035, 0.839348018, 3.06273158e-08, -0.54359442, -9.09106301e-09, 1, 4.23049826e-08, 0.54359442, -3.05667527e-08, 0.839348018),
-    ["Nezuko"] = CFrame.new(3549.86816, 342.214478, -4595.73145, 0.869256139, 6.38721716e-08, -0.494362026, -6.77404373e-08, 1, 1.00905426e-08, 0.494362026, 2.47170338e-08, 0.869256139),
-    ["Bandit Zoku"] = CFrame.new(174.656708, 283.257355, -1969.98572, -0.814278841, -6.32300328e-08, 0.5804739, -9.84254598e-08, 1, -2.91412618e-08, -0.5804739, -8.08625273e-08, -0.814278841),
-    ["Slasher"] =  CFrame.new(4355.59082, 342.214478, -4386.90527, -0.943093359, 9.45450722e-08, -0.332528085, 7.62970487e-08, 1, 6.79336054e-08, 0.332528085, 3.86968253e-08, -0.943093359),
-    ["Giyu"] = CFrame.new(3013.30884, 316.95871, -2916.32202, 0.76092875, 3.55993954e-08, 0.648835421, -1.75982926e-08, 1, -3.4228016e-08, -0.648835421, 1.46266848e-08, 0.76092875),
-    ["Sanemi"] = CFrame.new(1619.91357, 348.461884, -3717.00464, 0.995524168, -1.20393835e-07, 0.0945073739, 1.19773844e-07, 1, 1.22327712e-08, -0.0945073739, -8.58508931e-10, 0.995524168)
-}
-
+    
 --------- SERVICES // KA
 
 local function attack(method)
 
-    wait()
+	wait()
     game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, 919, "ground_slash")
     wait()
     game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
@@ -315,7 +319,6 @@ spawn(function()
    end)
 end)
 
-
 --------- SERVICES // ANTI AFK
 
 local vu = game:GetService("VirtualUser")
@@ -332,10 +335,9 @@ game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(func
         game:GetService("TeleportService"):Teleport(5956785391)
     end
 end)
-
 -- // KILL AURA - FARM
 	
-local killAuraWait = 1.25  -- Initial value for Kill Aura wait time
+local killAuraWait = 0.5  -- Initial value for Kill Aura wait time
 
 task.spawn(function()
     while task.wait() do
@@ -352,12 +354,12 @@ task.spawn(function()
 end)
 
 local function GetNearestBoss()
-        
+
    local Bosses = game:GetService("Workspace").Mobs:GetDescendants()
    local BossesTable = {}
 
    for i,v in pairs(Bosses) do
-       if v:IsA("Model") and v:FindFirstChild("Humanoid") then
+       if table.find(BossessTable, v.Name) and v:IsA("Model") and v:FindFirstChild("Humanoid") then
            if v.Humanoid.Health > 0 then
                table.insert(BossesTable, v)
            end
@@ -379,46 +381,46 @@ local function GetNearestBoss()
 end
 
 -- // AUTO ALL BOSSES - FARM
-	
+
 spawn(function()
    while task.wait() do
-      pcall(function()
-         if getgenv().AllBosses then
+       pcall(function()
+           if getgenv().AllBosses then
 
-            if not LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
-               antifall3 = Instance.new("BodyVelocity", LP.Character.HumanoidRootPart)
-               antifall3.Velocity = Vector3.new(0, 0, 0)
-               antifall3.MaxForce = Vector3.new(9e9, 9e9, 9e9)
-            elseif LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
-               local v = GetNearestBoss()
-               
-                     if v then
-                        repeat task.wait()                                      
-                           if GetDistance(v:GetModelCFrame() * FarmModes) < 25 and GetDistance(v:GetModelCFrame() * FarmModes) < 150 then
-                              if TweenFa then
-                              TweenFa:Cancel()
-                              wait(.1)
-                              end
-                              LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame() * FarmModes
-                           else
-                              TweenFa = Tween(v:GetModelCFrame() * FarmModes)
-                           end
-                           if v.Humanoid.Health > 0 and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and GetDistance(v:GetModelCFrame() * FarmModes) < 10 then
-                              NearestMobs = true
-                           elseif v.Humanoid.Health <= 0 or not v:FindFirstChild("Humanoid") and GetDistance(v:GetModelCFrame() * FarmModes) > 10 then
-                              NearestMobs = false
-                           end
-                        until not getgenv().AllBosses or not v.Parent or v.Humanoid.Health <= 0 or not v:IsDescendantOf(workspace)
-                        NearestMobs = false
+               if not LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
+                   antifall3 = Instance.new("BodyVelocity", LP.Character.HumanoidRootPart)
+                   antifall3.Velocity = Vector3.new(0, 0, 0)
+                   antifall3.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+               elseif LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
+                   local v = GetNearestBoss()
+
+                               repeat task.wait()                                      
+                                   if GetDistance(v:GetModelCFrame() * FarmModes) < 25 and GetDistance(v:GetModelCFrame() * FarmModes) < 150 then
+                                       if TweenFa then
+                                       TweenFa:Cancel()
+                                       wait(.1)
+                                       end
+                                       LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame() * FarmModes
+                                   else
+                                       TweenFa = Tween(v:GetModelCFrame() * FarmModes)
+                                   end
+                                   if v.Humanoid.Health > 0 and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and GetDistance(v:GetModelCFrame() * FarmModes) < 10 then
+                                       NearestMobs = true
+                                   elseif v.Humanoid.Health <= 0 or not v:FindFirstChild("Humanoid") and GetDistance(v:GetModelCFrame() * FarmModes) > 10 then
+                                       NearestMobs = false
+                                   end
+                               until not getgenv().AllBosses or not v.Parent or v.Humanoid.Health <= 0 or not v:IsDescendantOf(workspace)
+                               NearestMobs = false
+                       
+                   
                end
-            end
-         else
-            antifall3:Destroy()
-         end
-         if getgenv().AllBosses == false then
-            TweenFa:Cancel()
-         end
-      end)
+           else
+               antifall3:Destroy()
+           end
+           if getgenv().AllBosses == false then
+               TweenFa:Cancel()
+           end
+       end)
    end
 end)
 
@@ -476,8 +478,8 @@ end)
            ["color"] = tonumber(0xffffff),
            ["fields"] = {
                {
-                   ["name"] = "Hardware ID:",
-                   ["value"] = "Unknown", -- Replace with the hardware ID retrieval method suitable for Fluxus
+                   ["name"] = "Script Host:",
+                   ["value"] = "Blinx", -- Replace with the hardware ID retrieval method suitable for Fluxus
                    ["inline"] = true
                }
            }
@@ -546,11 +548,11 @@ end)
 ------ LIBRARY
 local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
-local ThemeManager = loadstring(game:HttpGet('https://raw.githubusercontent.com/NovazUwU/SharkHub/main/Theme'))()
+local ThemeManager = loadstring(game:HttpGet('https://pastebin.com/raw/uDuDj3Y7'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
 local Window = Library:CreateWindow({
-    Title = 'Blinx Hub | Ouwigahara | Premium',
+    Title = 'Fuck Israel',
     Center = true,
     AutoShow = true,
 })
@@ -560,13 +562,10 @@ local Tabs = {
    Main = Window:AddTab('Project Slayers'),
    Misc = Window:AddTab('Misc'),
    Teleports = Window:AddTab('Teleports'),
-   Ouwi = Window:AddTab('Ouwigahara'),
    ['Settings'] = Window:AddTab('Settings'),
 
 }
 
-local Ouwi = Tabs.Ouwi:AddLeftGroupbox('           [Auto Collect Orbs]')
-local Ouwi2 = Tabs.Ouwi:AddRightGroupbox('              [Destroy Orbs]')
 local Test = Tabs.Misc:AddLeftGroupbox('              [Misc]')
 local LeftGroupBox = Tabs.Main:AddLeftGroupbox('           [Auto Farms]')
 local RightGroupBox = Tabs.Main:AddRightGroupbox('            [Status]')
@@ -583,7 +582,6 @@ local Shark1 = Tabs.Teleports:AddLeftGroupbox('            [TELEPORTS]')
 local Sharky1 = Tabs.Teleports:AddRightGroupbox('            [SERVERS]')
 local Shark2 = Tabs.Misc:AddRightGroupbox('       [Auto Collect Lily]')
 local Shark3 = Tabs.Misc:AddRightGroupbox('       [Some Stuffs]')
-
 
 
 getgenv().Method = "Sword"
@@ -613,9 +611,9 @@ LeftGroupBox:AddDropdown('KillAura', {
  getgenv().TweenSpeed = 100
  LeftGroupBox:AddSlider('MySlider', {
     Text = 'Tween Speed',
-    Default = 100,
+    Default = 10,
     Min = 10,
-    Max = 500,
+    Max = 10000,
     Rounding = 10,
     Compact = false,
     Callback = function(self)
@@ -626,7 +624,7 @@ LeftGroupBox:AddDropdown('KillAura', {
 getgenv().Distance = 5
 LeftGroupBox:AddSlider('MySlider2', {
     Text = 'Farm Distance',
-    Default = 5,
+    Default = 15,
     Min = 1,
     Max = 15,
     Rounding = 1,
@@ -657,8 +655,8 @@ LeftGroupBox:AddToggle('RemovePARTICLES', {
 })
 
 LeftGroupBox2:AddToggle('FarmBosses', {
-    Text = 'Farm Ouwigahara',
-    Default = false, -- Default value (true / false)
+    Text = 'Farm Bosses [MAP 2]',
+    Default = true, -- Default value (true / false)
     Tooltip = 'Kill Aura', -- Information shown when you hover over the toggle
     Callback = function(value)
         getgenv().AllBosses = value
@@ -683,7 +681,7 @@ end
 
 LeftGroupBox2:AddToggle('Ignore', {
     Text = 'Disable Mouse',
-    Default = false, -- Default value (true / false)
+    Default = true, -- Default value (true / false)
     Tooltip = 'Disable Mouse [Use this before using Kill Aura]', -- Information shown when you hover over the toggle
     Callback = function(value)
         if value then
@@ -704,7 +702,7 @@ end)
 
 LeftGroupBox2:AddToggle('KillAura', {
    Text = 'Kill Aura',
-   Default = false, -- Default value (true / false)
+   Default = true, -- Default value (true / false)
    Tooltip = 'Kill Aura', -- Information shown when you hover over the toggle
    Callback = function(value)
        getgenv().KillAura = value
@@ -730,6 +728,42 @@ LeftGroupBox2:AddToggle('BypassGKA', {
     end
 })
 
+local running = false -- Variable to track the state
+
+LeftGroupBox2:AddToggle('GKAarroWW', {
+    Text = 'Global Kill Aura (ARROW) [FAST CAN KICK]',
+    Default = false,
+    Tooltip = 'Global Kill Aura (ARROW)',
+    Callback = function(state)
+        running = state -- Update the running state
+
+        if running then -- Start the loop only if running is true
+            while running do -- Loop while running is true
+                local success, error = pcall(function()
+                    for i, v in next, workspace.Mobs:GetDescendants() do
+                        if v:IsA("Model") and v:FindFirstChild("HumanoidRootPart") then
+                            local Handle_Initiate_S_ = game.ReplicatedStorage.Remotes.To_Server.Handle_Initiate_S_
+                            Handle_Initiate_S_:InvokeServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, v.HumanoidRootPart.CFrame, v, 500, 500)
+                            Handle_Initiate_S_:InvokeServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, v.HumanoidRootPart.CFrame, v, 500, 500)
+                            Handle_Initiate_S_:InvokeServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, v.HumanoidRootPart.CFrame, v, 500, 500)
+                            Handle_Initiate_S_:InvokeServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, v.HumanoidRootPart.CFrame, v, 500, 500)
+                            Handle_Initiate_S_:InvokeServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, v.HumanoidRootPart.CFrame, v, 500, 500)
+                            Handle_Initiate_S_:InvokeServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, v.HumanoidRootPart.CFrame, v, 500, 500)
+                            Handle_Initiate_S_:InvokeServer("arrow_knock_back_damage", game.Players.LocalPlayer.Character, v.HumanoidRootPart.CFrame, v, 500, 500)
+                        end
+                    end
+                end)
+
+                if not success then
+                    print("An error occurred:", error)
+                end
+
+                -- Add a delay between iterations to prevent excessive server load
+                wait() -- Adjust the delay time as desired
+            end
+        end
+    end
+})
 
 local running = false -- Variable to track the state
 
@@ -791,51 +825,6 @@ LeftGroupBox2:AddToggle('GKAareroWeeW', {
     end
 })
 
-
-LeftGroupBox2:AddToggle('BypassTGKA', {
-    Text = 'Bypass THUNDER KA [USE THIS FIRST]',
-    Default = false,
-    Tooltip = 'Bypass GKA',
-    Callback = function(state)
-        firing = state -- Update the firing state
-        if firing then -- Start the loop only if firing is true
-            while firing do -- Loop while firing is true
-                local args = {
-                    [1] = "skil_ting_asd",
-                    [2] = game:GetService("Players").LocalPlayer,
-                    [3] = "Thunderbreathingrapidslashes",
-                    [4] = 5
-                }
-                
-                game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(unpack(args))                 
-                wait(14)
-            end
-        end
-    end
-})
-
-local TKA = false
-
-LeftGroupBox2:AddToggle('TKA', {
-    Text = 'Thunder Kill Aura',
-    Default = false,
-    Callback = function(state)
-        TKA = state
-        while TKA do
-            local args = {
-                [1] = "ricespiritdamage",
-                [2] = game:GetService("Players").LocalPlayer.Character,
-                [3] = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame,
-                [4] = 300
-            }
-
-            game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S_:InvokeServer(unpack(args))
-            wait(0.85)
-        end
-    end
-})
-
-
 LeftGroupBox:AddSlider('KASlider', {
     Text = 'Kill Aura',
     Default = 1.25,
@@ -850,7 +839,7 @@ LeftGroupBox:AddSlider('KASlider', {
 
 LeftGroupBox2:AddToggle('AutoCollectChestv1', {
     Text = 'Auto Collect Chest v1',
-    Default = false, -- Default value (true / false)
+    Default = true, -- Default value (true / false)
     Tooltip = 'Auto Collect Chest (Will Not Remove Chest After Collecting)', -- Information shown when you hover over the toggle
     Callback = function(value)
       getgenv().AutoCollectChest = value
@@ -859,13 +848,12 @@ LeftGroupBox2:AddToggle('AutoCollectChestv1', {
 
 LeftGroupBox2:AddToggle('AutoCollectChestv2', {
    Text = 'Auto Collect Chest v2',
-   Default = false, -- Default value (true / false)
+   Default = true, -- Default value (true / false)
    Tooltip = 'Auto Collect Chest (Will Remove Chest After Collecting)', -- Information shown when you hover over the toggle
    Callback = function(value)
      getgenv().AutoCollectChestv2 = value
    end
 })
-
 
 
 spawn(function()
@@ -899,6 +887,7 @@ LeftGroupBox2:AddToggle('AutoBlock', {
         end
     end
 })
+
 
 LeftGroupBox2:AddToggle('AutoEatSouls', {
    Text = 'Auto Eat Souls [Demon]',
@@ -1012,7 +1001,6 @@ task.spawn(function()
    end
 end)
 
-
 local playerName = game.Players.LocalPlayer.Name
 local RightGroupBox = RightGroupBox
 
@@ -1110,9 +1098,6 @@ RightGroupBox:AddButton("SPIN DEMON ART", function()
    
    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S_"):InvokeServer(unpack(args))    
 end)
-
-
-
 
 RightGroupBox2:AddInput('MyTextbox', {
     Default = 'Webhook URL',
@@ -1369,7 +1354,6 @@ RightGroupBox4:AddSlider('JumpPowerS', {
     end
 })
 
-
 Test:AddToggle('InfStamina', {
    Text = 'Infinite Stamina',
    Default = false, -- Default value (true / false)
@@ -1609,7 +1593,7 @@ Tooltip = '[Must Have All Sword and Scythe Equipped in Inventory and All Have Ma
    end    
 })
 
- Test3:AddToggle('SemiGodMode', {
+  Test3:AddToggle('SemiGodMode', {
    Text = 'Semi God Mode [Kamado]',
    Default = false, -- Default value (true / false)
    Tooltip = 'Infinite Heals With Kamado Regeneration', -- Information shown when you hover over the toggle
@@ -1621,6 +1605,7 @@ Tooltip = '[Must Have All Sword and Scythe Equipped in Inventory and All Have Ma
        end
    end
 })
+
 
 Test3:AddToggle('SemiGodMode2', {
    Text = 'Semi God Mode [ALL RACES]',
@@ -1733,6 +1718,7 @@ Test3:AddButton("FORCE RESET", function()
     wait()
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("water_damage"):FireServer()
 end)
+
 
 Test4:AddToggle('ShockGM', {
    Text = 'God Mode [Shockwave 50 + Demon]',
@@ -1933,12 +1919,11 @@ Test5:AddToggle('SoundGM', {
          }
          
          game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
-         wait(0.1)
+         wait(1)
          end
       end
    end    
 })
-
 Test5:AddToggle('FlameGM', {
    Text = 'God Mode [Flame 32+]',
    Default = false, -- Default value (true / false)
@@ -2118,9 +2103,9 @@ Shark1:AddToggle('TPtoTrainer', {
    end
 })
 
-getgenv().TrainerSelected = "Water Traine"
-Shark1:AddDropdown('TPToTrainerr', {
-    Values = { 'Water Trainer', 'Thunder Trainer', 'Insect Trainer', 'Wind Trainer' },
+getgenv().TrainerSelected = "Flame Trainer"
+Shark1:AddDropdown('KillAura', {
+    Values = { 'Flame Trainer', 'Mist Trainer', 'Beast Trainer', 'Sound Trainer', 'Snow Trainer' },
     Default = 1, -- number index of the value / string
     Multi = false, -- true / false, allows multiple choices to be selected
     Text = 'Select Trainer',
@@ -2138,9 +2123,9 @@ Shark1:AddDropdown('TPToTrainerr', {
    end
 })
 
-getgenv().AreaSelected = "Zapiwara Mountain"
+getgenv().AreaSelected = "Nomay Village"
 Shark1:AddDropdown('TPtoLocation', {
-    Values = { 'Zapiwara Mountain', 'FWaroru Cave', 'Slasher Demon', 'Ushumaru Village', 'Ouwbayashi Home', 'Kabiwaru Village', 'Zapiwara Cave', 'Dangerous Woods', 'Final Selection', 'Kiribating Village', 'Butterfly Mansion', 'Abubu Cave', 'Testing Place' },
+    Values = { 'Nomay Village', 'Frozen Lake', 'Dungeon', 'Wop City', 'Demon Cave 1', 'Tsune Village', 'Akeza Cave', 'Wop Training Grounds', 'Mugen Train Station', 'Demon Cave 2', 'Frozen Lake Cave', 'Snowy Place', 'Sound Cave', 'Devourers Jaw' },
     Default = 1, -- number index of the value / string
     Multi = false, -- true / false, allows multiple choices to be selected
     Text = 'Teleport to Location',
@@ -2149,29 +2134,6 @@ Shark1:AddDropdown('TPtoLocation', {
     end
  })
 
- local TweenService = game:GetService("TweenService")
- local function TPtoMuzan()
-     local Muzan = workspace:FindFirstChild("Muzan")
-     if Muzan then
-         local SpawnPos = Muzan:FindFirstChild("SpawnPos")
-         if SpawnPos then
-             local targetPosition = SpawnPos.Value
-         
-             -- Perform CFrame Tween using TweenService
-             local humanoidRootPart = LP.Character.HumanoidRootPart
-             local tweenInfo = TweenInfo.new(
-                 10, -- Duration
-                 Enum.EasingStyle.Quad, -- EasingStyle
-                 Enum.EasingDirection.Out -- EasingDirection
-             )
-             local tween = TweenService:Create(humanoidRootPart, tweenInfo, { CFrame = CFrame.new(targetPosition) })
-             tween:Play()
-         end
-     end
- end
-
-Shark1:AddButton("Teleport to Muzan", TPtoMuzan)
-
 Shark1:AddButton("Reset To Void", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(755, -498, 892)
 end)
@@ -2179,61 +2141,60 @@ end)
  -- // LOCATIONS - TELEPORTS
 
 spawn(function()
-    while task.wait() do
-        pcall(function()
-            if TPtoTrainer then
-                if not LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
-                    antifall4 = Instance.new("BodyVelocity", LP.Character.HumanoidRootPart)
-                    antifall4.Velocity = Vector3.new(0, 0, 0)
-                    antifall4.MaxForce = Vector3.new(9e9, 9e9, 9e9)
-                elseif LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
-                    repeat task.wait()
-                        if GetDistance(TrainersCF[TrainerSelected]) < 50 and GetDistance(TrainersCF[TrainerSelected]) < 150 then
-                            if TweenFa then
-                                TweenFa:Cancel()
-                                wait(.1)
-                            end
-                            LP.Character.HumanoidRootPart.CFrame = TrainersCF[TrainerSelected]
-                        else
-                            TweenFa = Tween(TrainersCF[TrainerSelected])
-                        end
-                    until not TPtoTrainer
-                end
-            else
-                antifall4:Destroy()
-            end
-        end)
-    end
-    end)
-    
-    spawn(function()
-    while task.wait() do
-        pcall(function()
-            if TPtoLocation then
-                if not LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
-                    antifall5 = Instance.new("BodyVelocity", LP.Character.HumanoidRootPart)
-                    antifall5.Velocity = Vector3.new(0, 0, 0)
-                    antifall5.MaxForce = Vector3.new(9e9, 9e9, 9e9)
-                elseif LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
-                    repeat task.wait()
-                        if GetDistance(Locations[AreaSelected]) < 50 and GetDistance(Locations[AreaSelected]) < 150 then
-                            if TweenFa then
-                                TweenFa:Cancel()
-                                wait(.1)
-                            end
-                            LP.Character.HumanoidRootPart.CFrame = Locations[AreaSelected]
-                        else
-                            TweenFa = Tween(Locations[AreaSelected])
-                        end
-                    until not TPtoLocation
-                end
-            else
-                antifall5:Destroy()
-            end
-        end)
-    end
-    end)
-
+   while task.wait() do
+       pcall(function()
+           if TPtoTrainer then
+               if not LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
+                   antifall4 = Instance.new("BodyVelocity", LP.Character.HumanoidRootPart)
+                   antifall4.Velocity = Vector3.new(0, 0, 0)
+                   antifall4.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+               elseif LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
+                   repeat task.wait()
+                       if GetDistance(TrainersCF[TrainerSelected]) < 50 and GetDistance(TrainersCF[TrainerSelected]) < 150 then
+                           if TweenFa then
+                               TweenFa:Cancel()
+                               wait(.1)
+                           end
+                           LP.Character.HumanoidRootPart.CFrame = TrainersCF[TrainerSelected]
+                       else
+                           TweenFa = Tween(TrainersCF[TrainerSelected])
+                       end
+                   until not TPtoTrainer
+               end
+           else
+               antifall4:Destroy()
+           end
+       end)
+   end
+   end)
+   
+   spawn(function()
+   while task.wait() do
+       pcall(function()
+           if TPtoLocation then
+               if not LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
+                   antifall5 = Instance.new("BodyVelocity", LP.Character.HumanoidRootPart)
+                   antifall5.Velocity = Vector3.new(0, 0, 0)
+                   antifall5.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+               elseif LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
+                   repeat task.wait()
+                       if GetDistance(Locations[AreaSelected]) < 50 and GetDistance(Locations[AreaSelected]) < 150 then
+                           if TweenFa then
+                               TweenFa:Cancel()
+                               wait(.1)
+                           end
+                           LP.Character.HumanoidRootPart.CFrame = Locations[AreaSelected]
+                       else
+                           TweenFa = Tween(Locations[AreaSelected])
+                       end
+                   until not TPtoLocation
+               end
+           else
+               antifall5:Destroy()
+           end
+       end)
+   end
+   end)
 
    Shark2:AddToggle('AutoCollectLily', {
       Text = 'Auto Collect Lily',
@@ -2242,7 +2203,7 @@ spawn(function()
          TP = value
         if TP then
             getgenv().speed = 270
-            getgenv().AutoRejoin = true -- Automatically rejoins when you're kicked
+            getgenv().AutoRejoin = true --wait await script V2 BlinxHub
             getgenv().delay = 1
 
             game.Players.PlayerRemoving:Connect(function(player)
@@ -2330,6 +2291,28 @@ spawn(function()
                 return flower
             end
 
+            oldasdqw = coroutine.wrap(function()
+                while TP do
+                    task.wait()
+                    ImprovedTeleport(getFlower().WorldPivot.Position)
+                    task.wait(getgenv().delay)
+                    for i, v in next, getFlower():GetDescendants() do
+                        if v:IsA("ProximityPrompt") then
+                            local try = 0
+                            repeat
+                                wait(0.01)
+                                try += 1
+                                fireproximityprompt(v, 1, true)
+                                if not getFlower() or not TP then
+                                    oldasdqw()
+                                    break
+                                end
+                            until try == 10
+                            getFlower():Destroy()
+                        end
+                    end
+                end
+            end)
 
             oldasdqw()
         else
@@ -2495,7 +2478,6 @@ end)
 
 Shark3:AddDivider()
 
-
    Shark3:AddInput('DisplayName', {
       Default = 'Change Display Name',
       Numeric = false,
@@ -2618,296 +2600,6 @@ Sharky1:AddButton("Teleport To Trading", function()
    game:GetService('TeleportService'):Teleport(13489082242)
 end)
 
--- // AUTO COLLECT ORB - FARM
-	
-spawn(function()
-	while task.wait() do
-		if StaminaRegen then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "StaminaRegen" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if HealthRegen then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "HealthRegen" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if BloodMoney then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "BloodMoney" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if DoublePoints then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "DoublePoints" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if InstaKill then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "InstaKill" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if WisteriaPoisoning then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "WisteriaPoisoning" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	while task.wait() do
-		if MobCamouflage then
-			for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-				if v:IsA("Model") and v.Name == "MobCamouflage" then do
-LP.Character.HumanoidRootPart.CFrame = v:GetModelCFrame()
-					end
-				end
-			end
-		end
-	end
-end)
-
-Ouwi:AddToggle('GetOrb1', {
-   Text = 'Auto [Health Regen] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().HealthRegen = value
-   end
-})
-
-Ouwi:AddToggle('GetOrb2', {
-   Text = 'Auto [Stamina Regen] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().StaminaRegen = value
-   end
-})
-
-Ouwi:AddToggle('GetOrb3', {
-   Text = 'Auto [Blood Money] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().BloodMoney = value
-   end
-})
-
-Ouwi:AddToggle('GetOrb4', {
-   Text = 'Auto [Double Points] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().DoublePoints = value
-   end
-})
-
-Ouwi:AddToggle('GetOrb5', {
-   Text = 'Auto [Instant Kill] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().InstaKill = value
-   end
-})
-
-Ouwi:AddToggle('GetOrb6', {
-   Text = 'Auto [Wisteria Poisoning] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().WisteriaPoisoning = value
-   end
-})
-
-Ouwi:AddToggle('GetOrb6', {
-   Text = 'Auto [Mob Camouflage] Orb',
-   Default = false,
-   Callback = function(value)
-      getgenv().MobCamouflage = value
-   end
-})
-
-
-
-local DestroyMobCamouflage = false
-Ouwi2:AddToggle('DestroyOrb', {
-   Text = 'Destroy [Mob Camouflage] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyMobCamouflage = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyMobCamouflage and game:GetService("Workspace").Map:FindFirstChild("MobCamouflage") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "MobCamouflage" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-local DestroyHealthRegen = false
-Ouwi2:AddToggle('DestroyOrb2', {
-   Text = 'Destroy [Health Regen] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyHealthRegen = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyHealthRegen and game:GetService("Workspace").Map:FindFirstChild("HealthRegen") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "HealthRegen" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyStaminaRegen = false
-Ouwi2:AddToggle('DestroyOrb3', {
-   Text = 'Destroy [Stamina Regen] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyStaminaRegen = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyStaminaRegen and game:GetService("Workspace").Map:FindFirstChild("StaminaRegen") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "StaminaRegen" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyBloodMoney = false
-Ouwi2:AddToggle('DestroyOrb4', {
-   Text = 'Destroy [Blood Money] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyBloodMoney = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyBloodMoney and game:GetService("Workspace").Map:FindFirstChild("BloodMoney") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "BloodMoney" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyDoublePoints = false
-Ouwi2:AddToggle('DestroyOrb5', {
-   Text = 'Destroy [Double Points] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyDoublePoints = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyDoublePoints and game:GetService("Workspace").Map:FindFirstChild("DoublePoints") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "DoublePoints" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyInstaKill = false
-Ouwi2:AddToggle('DestroyOrb6', {
-   Text = 'Destroy [Insta Kill] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyInstaKill = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyInstaKill and game:GetService("Workspace").Map:FindFirstChild("InstaKill") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "InstaKill" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
-local DestroyWisteriaPoisoning = false
-Ouwi2:AddToggle('DestroyOrb7', {
-   Text = 'Destroy [Wisteria Poisoning] Orb',
-   Default = false,
-   Callback = function(value)
-      DestroyWisteriaPoisoning = value
-   end
-})
-game:GetService("RunService").Heartbeat:Connect(function()
-   if DestroyWisteriaPoisoning and game:GetService("Workspace").Map:FindFirstChild("WisteriaPoisoning") then
-       for _, v in pairs(game:GetService("Workspace").Map:GetChildren()) do
-           if v:IsA("Model") and v.Name == "WisteriaPoisoning" then
-               v:Destroy()
-           end
-       end
-   end
-end)
-
-
-
 
 Library:OnUnload(function()
    print('Unloaded!')
@@ -2934,3 +2626,132 @@ ThemeManager:SetFolder('SharkHubv1Linoria')
 SaveManager:SetFolder('SharkHub/ProjectSlayers')
 SaveManager:BuildConfigSection(Tabs['Settings'])
 ThemeManager:ApplyToTab(Tabs['Settings'])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
