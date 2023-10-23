@@ -546,11 +546,11 @@ end)
 ------ LIBRARY
 local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
-local ThemeManager = loadstring(game:HttpGet('https://raw.githubusercontent.com/NovazUwU/SharkHub/main/Theme'))()
+local ThemeManager = loadstring(game:HttpGet('https://pastebin.com/raw/uDuDj3Y7'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
 local Window = Library:CreateWindow({
-    Title = 'Blinx Hub | Ouwigahara | Premium',
+    Title = 'Fuck Israel | Premium | Ouwigahara ',
     Center = true,
     AutoShow = true,
 })
