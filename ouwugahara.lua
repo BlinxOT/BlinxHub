@@ -1020,7 +1020,7 @@ local clanLabel = RightGroupBox:AddLabel("Clan: N/A")
 RightGroupBox:AddDropdown('SelectClan', {
     Values = { 'Kamado', 'Uzui', 'Rengoku', 'Agatsuma', 'Tomioka', 'Tokito', 'Hashibira', 'Soyama', 'Shinazugawa', 'Kocho', 'Sabito', 'Tamayo', 'Kuwajima', 'Makamo' },
     Default = 1, -- number index of the value / string
-    Multi = true, -- true / false, allows multiple choices to be selected
+    Multi = false, -- true / false, allows multiple choices to be selected
     Text = 'Select Clan',
     Callback = function(v)
         local localplayer = game:GetService("Players").LocalPlayer
